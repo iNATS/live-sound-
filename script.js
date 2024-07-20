@@ -1,4 +1,3 @@
-
 async function setupAudioProcessing() {
     const audioContext = new (window.AudioContext || window.webkitAudioContext)();
     const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
@@ -23,7 +22,7 @@ async function setupAudioProcessing() {
         const average = sum / bufferLength;
         const volume = (average / 255) * 100;
 
-        volumeLevel.style.width = volume + '%';
+        volumeLevel.style.height = volume + '%';
 
         const colorValue = Math.floor((volume / 100) * 255);
         volumeLevel.style.backgroundColor = `rgb(${colorValue}, 0, ${255 - colorValue})`;
